@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+	<head>
+		<title> Login Form </title> 
+        <!--Include CSS file here-->
+        <link rel="stylesheet" type="text/css" href="stylingregistration.css">
+        <!--Include JS file here-->
+        
+       	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+       	<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+		<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+		<script type="text/javascript" src="query.js"></script>
+	
+		<style>
+                .left {
+                float: left;
+                width: 300px;
+                }
+                .center {
+                float: center;
+                width: 300px;
+                }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+    
+	<body>
+		<div  class="form">
+        <fieldset>
+    		<form name="myForm" id="contactform" action="" method="post"> 
+            
+           		<div class="center">
+                	<h1><p><img src="regstyle.gif" alt="Registration Icon" style="width:40px;height:40px;"> 
+                    Registration</h1>
+        			___________________________________________________ </p>
+       			</div>
+                
+    			<p><label for="username">Username</label>
+    			<input id="username" name="username" placeholder="Username" required="" type="text"> </p> 
+
+	  			<p><label for="pwd">Password</label>
+    			<input type="password" id="pwd" name="pwd" required="" placeholder="Password" onChange="checkValidateForm();"></p> 
+                <div id="pwd_strength_wrap">
+                	<div id="passwordDescription">Password not entered</div>
+                		<div id="passwordStrength" class="strength0"></div>
+                			<div id="pswd_info">
+                        		<strong>Strong Password Tips:</strong>
+                        		
+                                <ul>
+                                	<li class="invalid" id="length"><label for ="first">Between 7-20 characters</label><input type="checkbox" id="first_checkbox_btn" name="choice" value=""/></li>
+                                	<li class="invalid" id="pnum"><label for ="second">At least 1 numeric character(0,9)</label> <input type="checkbox" id="second_checkbox_btn" name="choice" value="" /></li>
+                                    <li class="invalid" id="alpha"><label for ="third">At least 4 alpha characters</label><input type="checkbox" id="third_checkbox_btn" name="choice" value="" /></li>
+                                	<li class="invalid" id="spchar"><label for ="fourth">At least one special character(!,#,$,%)</label><input type="checkbox" id="fourth_checkbox_btn" name="choice" value="" /></li> 
+                               
+                        		</ul>
+                                <div id="spacePwd">
+                                <strong>Password should not have space!!</strong></div>
+                                
+               				 </div><!-- END pswd_info -->
+       			 </div><!-- END pwd_strength_wrap -->
+                 
+                 
+                <div class="passwordValidationAlert" id="divValidateForm">
+				</div>
+                
+                <p><label for="verifypwd">Verify Password</label>
+    			<input type="password" id="verifypwd" required="" placeholder="Confirm Password" disabled="true" onChange="checkPasswordMatch();"> </p> 
+                
+    			<div class="passwordValidationAlert" id="divCheckPasswordMatch">
+				</div>
+    			 
+                <p><label for="email">Email Address</label>
+    			<input type="email" id="email" name="email" placeholder="name@abc.com" required="" type="email"> </p> 
+                
+                <p><label for="verifyemail">Verify Email Address</label>
+    			<input type="verifyemail" id="verifyemail" name="verifyemail" placeholder="name@abc.com" required="" type="email" onChange="checkEmailMatch();" > </p> 
+                <div class="emailValidationAlert" id="divCheckEmailMatch">
+				</div>
+          
+                <p><label>Security Question</label>
+                  <label class="question"> 
+                  	<select class="select-style" name="SecurityQuestion" id="securityqs01">
+                  		<option value="">--</option>
+                  		<option  value="01">Sum of 2 + 3 = </option>
+                  		<option value="02">Sum of 100 + 200 = </option>
+                 		<option value="03" >23 * 100 = </option>
+                  		<option value="04">Capital of India? </option>
+                  		<option value="05">Capital of USA? </option>
+                  	</select> 
+                 </label></p>
+              
+ 
+           	  	<p><label for="securityans01">Security Answer</label> 
+            	<input id="securityans01" name="securityans-1" required="" type="text"> </p>
+
+                <p><label>Security Question</label>
+                  <label class="question"> 
+                  	<select class="select-style" name="SecurityQuestion" id="securityqs02">
+                  		<option value="">--</option>
+                  		<option value="01">Sum of 2 + 3 = </option>
+                  		<option value="02">Sum of 100 + 200 = </option>
+                 		<option value="03" >23 * 100 = </option>
+                  		<option value="04">Capital of India? </option>
+                  		<option value="05">Capital of USA? </option>
+                  	</select> 
+                 </label></p>
+  
+           	 	 <p><label for="securityans02">Security Answer</label> 
+          		<input id="securityans02" name="securityans02" required="" type="text"> </p>
+                
+              	<p><label for="mobile">Mobile</label> 
+          		<input id="mobile" name="mobile" placeholder="+1-555-555-5555"> </p>
+                
+              	<p> Address:         
+              	 <div id="address">
+       				<textarea id="location" name="address" rows="5" cols="40"></textarea><br/><br/>
+                     Areas you may be interested in, please select one or more: <br/>
+                    <textarea id="area" name="area" rows="8" cols="40"></textarea><br/><br/>
+                 </div> </p> <!-- END address -->
+            
+            	<div class="left">
+                	<input type="button" value="Register" id="register" onclick="dofirst();">
+                	<input type="button" value="Cancel" id="cancel" onclick="">
+           	    </div> 
+   		</form> <!-- END contactform -->
+     </fieldset>
+	</div>          	
+	</body>
+</html>
+
